@@ -1,6 +1,7 @@
 package com.andersonrocha.ecommerce.domain.checkout.entity
 
 import java.math.BigDecimal
+import kotlin.compareTo
 
 data class OrderItem(
     val productId: String,

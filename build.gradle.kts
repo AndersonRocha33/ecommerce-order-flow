@@ -11,7 +11,10 @@ repositories {
 
 dependencies {
     testImplementation(kotlin("test"))
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.2")
+    implementation(kotlin("stdlib-jdk8"))
 }
+
 
 kotlin {
     jvmToolchain(21)
