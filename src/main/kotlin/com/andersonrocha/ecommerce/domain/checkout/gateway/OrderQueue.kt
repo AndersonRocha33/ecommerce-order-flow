@@ -4,4 +4,5 @@ import com.andersonrocha.ecommerce.domain.checkout.entity.Order
 
 interface OrderQueue{
     fun publish(order: Order)
+    fun consume(): Order?
 }

@@ -15,9 +15,9 @@ class CheckoutOrderApplicationService(
 
     private val createOrderUseCase = CreateOrderUseCase()
     private val checkoutOrderUseCase = CheckoutOrderUseCase(
-        orderRepository,
-        paymentGateway,
-        orderQueue
+        paymentGateway = paymentGateway,
+        orderRepository = orderRepository,
+        orderQueue = orderQueue
     )
 
     fun checkout(items: List<CreateOrderUseCase.InputItem>) {
