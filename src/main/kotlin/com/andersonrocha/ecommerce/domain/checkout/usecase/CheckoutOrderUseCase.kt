@@ -13,11 +13,14 @@ class CheckoutOrderUseCase(
 ) {
 
     fun execute(order: Order) {
+
         val paymentApproved = paymentGateway.pay(order.total())
 
         if (!paymentApproved) {
             throw PaymentRefusedException()
         }
+
+        order.markAsPaid()
 
         orderRepository.save(order)
         orderQueue.publish(order)
